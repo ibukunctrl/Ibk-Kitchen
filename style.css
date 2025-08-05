@@ -12,7 +12,16 @@
       margin: 5px;
     }
   }
-
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 /* LOADING STYLE */
@@ -244,16 +253,7 @@
   text-transform: uppercase;
   letter-spacing: 4px;
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 
 .card-text a{
     color: aliceblue;
@@ -467,4 +467,5 @@ footer {
   padding: 1rem 0;
   margin-top: 3rem;
 }
+
 
