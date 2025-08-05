@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home-Ibukun Kitchen</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- js styLING -->
+     <script>
+    window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    preloader.style.opacity = "0";
+    preloader.style.visibility = "hidden";
+    preloader.style.transition = "all 0.5s ease-out";
+    setTimeout(() => preloader.remove(), 500);
+  });
+</script>
+
+     <!-- js styling end -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- LOADING -->
+ <div id="preloader">
+  <i class="fas fa-hamburger food-icon"></i>
+</div>
+
+<!-- LOADING ENDS -->
+
+    <div class="fixed-top">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html" id="img" style="margin-right: -30px;"><img src="images/ibukun kitchekn.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" id="nav-home" aria-current="page" href="#">Home</a>
+                    </li>
+                    <!-- about us dropdown -->
+                     <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ABOUT US 
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" id="nav" href="#">Action</a></li>
+            <li><a class="dropdown-item" id="nav" href="map.html">Location</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" id="nav" href="#">Apply to Learn</a></li>
+          </ul>
+        </li>
+                     <!-- about us end -->
+                    <li class="nav-item">
+                    <a class="nav-link" id="nav" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" id="nav1" href="cart.html">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" id="nav1" href="contact.html">Contact Us</a>
+                    </li>
+                    
+                    
+                    <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li class="nav-item" id="twi">
+                    <a class="nav-link" href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <button class="custom-btn">
+                        <i class="fas fa-utensils"></i>
+                        <div class="btn-text">
+                            <span class="line-one">ORDER NOW</span>
+                            <span class="line-two">FAST & FRESH</span>
+                        </div>
+                        </button>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- carousel -->
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" sty>
+            <img src="images/BURGER.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+            <img src="images/BURGER (2).jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+            <img src="images/BURGER (3).jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+            <img src="images/BURGER (1).jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        </div>
+     <!-- end of carousel -->
+        <div class="image-container">
+            <button class="order-btn">Order Now</button>
+            <img src="images/COVER PHTO.jpg" alt="Delicious Meal" />
+            </div>
+    <!-- contact boxes -->
+     <div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col" id="btnright">
+      <button class="custom-btn1">
+            <i class="fa-brands fa-whatsapp"></i>
+            <div class="btn-text">
+                <span class="line-one">ORDER VIA</span>
+                <span class="line-one">WHATSAPP</span>
+            </div>
+        </button>
+    </div>
+    <div class="col">
+      <button class="custom-btn1">
+            <i class="fa-solid fa-phone-volume"></i>
+            <div class="btn-text">
+                <span class="line-one">07068668907</span>
+                <span class="line-one">08028267934</span>
+            </div>
+        </button>
+    </div>
+    <div class="col">
+      <button class="custom-btn2">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div class="btn-text">
+                <span class="line-one">FAST</span>
+                <span class="line-one">DELIVERY</span>
+            </div>
+        </button>
+    </div>
+    </div>
+    </div>
+     <!-- end of contact boxed -->
+   
+     <!-- food photo cards -->
+      <div class="taste">
+        <h1> Tasty Meals Menu</h1>
+      </div>
+      <div id="multiCardCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <!-- First Slide -->
+    <div class="carousel-item active" id="caorusel2">
+      <div class="d-flex justify-content-center gap-3">
+        <div class="card" style="width: 18rem;">
+          <img src="images/jollof rice.jpg" class="card-img-top" alt="...">
+          <div class="card-body"><p class="card-text">Jollof Rice and Chicken</p></div>
+          <div class="card-body"><p class="card-text"><b>₦5,000</b></p></div>
+          <div class="card-body"><p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="images/ofada.jpg" class="card-img-top" alt="...">
+          <div class="card-body"><p class="card-text">Ofada Rice</p></div>
+          <div class="card-body"><p class="card-text"><b>₦3,500</b></p></div>
+          <div class="card-body"><p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="images/pizza1.jpg" class="card-img-top" alt="...">
+          <div class="card-body"><p class="card-text">Pizza</p></div>
+          <div class="card-body"><p class="card-text"><b>₦2,500</b></p></div>
+          <div class="card-body"><p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Slide -->
+    <div class="carousel-item" id="caorusel1">
+      <div class="d-flex justify-content-center gap-3">
+        <div class="card" style="width: 18rem;">
+          <img src="images/yam and egg sauce.jpg" class="card-img-top" alt="...">
+          <div class="card-body"><p class="card-text">Yam and Egg Sauce</p></div>
+          <div class="card-body"><p class="card-text"><b>₦1,500</b></p></div>
+          <div class="card-body"><p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="images/sharwarma.jpg" class="card-img-top" alt="...">
+          <div class="card-body"><p class="card-text">Sharwarma</p></div>
+          <div class="card-body"><p class="card-text"><b>₦2,000</b></p></div>
+          <div class="card-body"><p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="images/drinks.jpg" class="card-img-top" alt="...">
+          <div class="card-body"><p class="card-text">Drinks</p></div>
+          <div class="card-body"><p class="card-text"><b>₦500</b></p></div>
+          <div class="card-body"><p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#multiCardCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#multiCardCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+      <!-- end of food photo cards -->
+       <!-- end body -->
+            <div class="card text-center">
+        <div class="card-header" id="footer">
+            <img src="images/ibukun kitchekn.png" alt="">
+        </div>
+        <div class="card-body" id="footerbody">
+            <h5 class="card-title" id="footertext">HEAD OFFICE</h5>
+            <p class="card-text"><a href="map.html">Ipaja Road, Lagos Nigeria</a>
+            <h5 class="card-title" id="footertext">BRANCH</h5>
+            <p class="card-text"><a href="map2.html">Command Rd, Lagos Nigeria</a>
+            <h5 class="card-title" id="footertext">SOCIAL MEDIA</h5>
+            <p class="card-text"><a href="#"><i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-square-instagram"></i>ibukun_kitchen</a></p>
+            <a href="menu.html" class="btn btn-primary" id="footertext">Order Now</a>
+        </div>
+        <div class="card-footer text-body-secondary">
+            2025 copyright © Ibukun Kitchen. All rights reserved 
+ 
+        </div>
+        </div>
+        <!-- end of end body -->
+<script>
+  window.addEventListener("load", function () {
+    // Force at least 2 seconds delay even if page loads fast
+    setTimeout(() => {
+      const preloader = document.getElementById("preloader");
+      const mainContent = document.getElementById("main-content");
+
+      preloader.style.opacity = "0";
+      preloader.style.visibility = "hidden";
+      preloader.style.transition = "all 0.5s ease-out";
+
+      // After fade-out, show main content
+      setTimeout(() => {
+        preloader.remove();
+        mainContent.style.display = "block";
+      }, 500); // fade out duration
+    }, 10000); // ⬅️ minimum time you want to keep the loader visible
+  });
+</script>
+</body>
+</html>

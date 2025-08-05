@@ -1,0 +1,13 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "../../../../xampp/htdocs/phpproject"
+    }
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "Ibukun Kitchen"
+  }
+}

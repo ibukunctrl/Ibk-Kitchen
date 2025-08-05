@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart | Tasty Bites</title>
+  <!-- js styLING -->
+     <script>
+    window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    preloader.style.opacity = "0";
+    preloader.style.visibility = "hidden";
+    preloader.style.transition = "all 0.5s ease-out";
+    setTimeout(() => preloader.remove(), 500);
+  });
+</script>
+
+     <!-- js styling end -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- LOADING -->
+ <div id="preloader">
+  <i class="fas fa-hamburger food-icon"></i>
+</div>
+
+<!-- LOADING ENDS -->
+<div class="fixed-top">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html" id="img" style="margin-right: -30px;"><img src="images/ibukun kitchekn.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" id="nav" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <!-- about us dropdown -->
+                     <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ABOUT US 
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" id="nav" href="#">Action</a></li>
+            <li><a class="dropdown-item" id="nav" href="map.html">Location</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" id="nav" href="#">Apply to Learn</a></li>
+          </ul>
+        </li>
+                     <!-- about us end -->
+                    <li class="nav-item">
+                    <a class="nav-link" id="nav1" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" id="nav-home" href="cart.html">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" id="nav1" href="contact.html">Contact Us</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li class="nav-item" id="twi">
+                    <a class="nav-link" href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <button class="custom-btn">
+                        <i class="fas fa-utensils"></i>
+                        <div class="btn-text">
+                            <span class="line-one">ORDER NOW</span>
+                            <span class="line-two">FAST & FRESH</span>
+                        </div>
+                        </button>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+  <main class="cart-container" style="margin-top: 130px;">
+    <h2>Your Cart</h2>
+    <div class="cart-content">
+      <!-- Cart Items -->
+      <div class="cart-items">
+        <div class="cart-item">
+          <img src="images/jollof rice.jpg" alt="Food" />
+          <div class="item-info">
+            <h3>Jollof Rice</h3>
+            <p>#3,500</p>
+            <div class="quantity">
+              <label for="qty1">Qty:</label>
+              <input type="number" id="qty1" value="1" min="1" />
+            </div>
+          </div>
+        </div>
+
+        <div class="cart-item">
+          <img src="images/fried rice.jpg" alt="Food" />
+          <div class="item-info">
+            <h3>Fried Rice</h3>
+            <p>#2,500</p>
+            <div class="quantity">
+              <label for="qty2">Qty:</label>
+              <input type="number" id="qty2" value="2" min="1" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cart Summary -->
+      <div class="cart-summary">
+        <h3>Order Summary</h3>
+        <p>Subtotal: <span>#6,000</span></p>
+        <p>Tax: <span>#150.00</span></p>
+        <p><strong>Total: <span>#6,150.00</span></strong></p>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background: brown; padding: 15px 20px;">
+        Proceed to Checkout
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Proceed to Payment?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Make sure your delivery address and payment method are correct. <br>
+                Click "Continue" to proceed with payment.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary"><a href="checkout.html" style="text-decoration: none; color: white;">Checkout</a></button>
+            </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Ibukun Kitchen. All rights reserved.</p>
+  </footer>
+  <script>
+    window.addEventListener("load", function () {
+    setTimeout(() => {
+      const preloader = document.getElementById("preloader");
+      preloader.style.opacity = "0";
+      preloader.style.visibility = "hidden";
+      preloader.style.transition = "all 3.5s ease-out";
+      setTimeout(() => preloader.remove(), 500);
+    }, 100000); // 3 seconds delay just for testing
+  });
+</script>
+</body>
+</html>
