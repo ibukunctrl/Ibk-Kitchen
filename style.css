@@ -230,9 +230,31 @@
   transform: scale(1.05);
 }
 .taste h1{
-    text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Poppins', sans-serif; /* You can use Google Fonts */
+  font-size: 3rem;
+  color: #ff4d4d;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 50px;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 4px;
 }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .card-text a{
     color: aliceblue;
 }
@@ -445,3 +467,4 @@ footer {
   padding: 1rem 0;
   margin-top: 3rem;
 }
+
