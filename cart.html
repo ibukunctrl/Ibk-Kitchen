@@ -16,8 +16,8 @@
 </script>
 
      <!-- js styling end -->
-   <link rel="icon" href="images/Untitled design.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/Untitled design.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
@@ -35,37 +35,32 @@
 <div class="fixed-top">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html" id="img" style="margin-right: -30px;"><img src="images/ibukun kitchekn.png" alt=""></a>
+                <a class="navbar-brand" href="index.html" id="img" style="margin-right: -30px; margin-left: -20px;"><img src="images/ibukun kitchekn.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link active" id="nav" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link active" id="navclr" aria-current="page" href="index.html">Home</a>
                     </li>
-                    <!-- about us dropdown -->
-                     <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            ABOUT US 
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" id="nav" href="#">Action</a></li>
-            <li><a class="dropdown-item" id="nav" href="map.html">Location</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" id="nav" href="#">Apply to Learn</a></li>
-          </ul>
-        </li>
-                     <!-- about us end -->
+                   
                     <li class="nav-item">
-                    <a class="nav-link" id="nav1" href="menu.html">Menu</a>
+                    <a class="nav-link" id="navclr" href="menu.html">Menu</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" id="nav-home" href="cart.html">Cart</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" id="nav1" href="contact.html">Contact Us</a>
+                    <a class="nav-link" id="navclr" href="contact.html">Contact Us</a>
                     </li>
+                     <!-- about us dropdown -->
+      <div class="search-container" style="margin-left: 30px; margin-bottom: 20px;">
+    <input type="text"  id="foodSearch" placeholder="Search for food...">
+    <button  onclick="searchFood()">Search</button>
+  </div>
+  <script src="script.js"></script>
+                     <!-- about us end -->
                     
                     <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -171,6 +166,3 @@
 </script>
 </body>
 </html>
-
-
-
