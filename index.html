@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home-Ibukun Kitchen</title>
     <link rel="stylesheet" href="style.css">
-
+<!-- style -->
+ 
+ <!-- style ends -->
     <!-- js styLING -->
      <script>
     window.addEventListener("load", function () {
@@ -15,10 +17,27 @@
     preloader.style.transition = "all 0.5s ease-out";
     setTimeout(() => preloader.remove(), 500);
   });
-</script>
+// Search Script
+  const foodPages = {
+  pizza: "pizza.html",
+  burger: "burger.html",
+  rice: "rice.html",
+  shawarma: "shawarma.html",
+  spaghetti: "spaghetti.html"
+};
 
+function searchFood() {
+  const input = document.getElementById("foodSearch").value.toLowerCase().trim();
+
+  if (foodPages[input]) {
+    window.location.href = foodPages[input];
+  } else {
+    alert("Sorry, that food isn't on our menu yet!");
+  }
+}
+</script>
      <!-- js styling end -->
-     <link rel="icon" href="images/Untitled design.png" type="image/png" />
+    <link rel="icon" href="images/Untitled design.png" type="image/png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
@@ -36,38 +55,32 @@
     <div class="fixed-top">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html" id="img" style="margin-right: -30px;"><img src="images/ibukun kitchekn.png" alt=""></a>
+                <a class="navbar-brand" href="index.html" id="img" style="margin-right: -30px; margin-left: -20px;"><img src="images/ibukun kitchekn.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link active" id="nav-home" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" id="nav-home"  aria-current="page" href="#">Home</a>
                     </li>
-                    <!-- about us dropdown -->
-                     <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            ABOUT US 
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" id="nav" href="#">Action</a></li>
-            <li><a class="dropdown-item" id="nav" href="map.html">Location</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" id="nav" href="#">Apply to Learn</a></li>
-          </ul>
-        </li>
+                   
+                    <li class="nav-item">
+                    <a class="nav-link" id="navclr"href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" id="navclr"href="cart.html">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" id="navclr" href="contact.html">Contact Us</a>
+                    </li>
+                     <!-- about us dropdown -->
+      <div class="search-container" style="margin-left: 30px; margin-bottom: 20px;">
+    <input type="text"  id="foodSearch" placeholder="Search for food...">
+    <button  onclick="searchFood()">Search</button>
+  </div>
+  <script src="script.js"></script>
                      <!-- about us end -->
-                    <li class="nav-item">
-                    <a class="nav-link" id="nav" href="menu.html">Menu</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" id="nav1" href="cart.html">Cart</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" id="nav1" href="contact.html">Contact Us</a>
-                    </li>
-                    
                     
                     <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -263,5 +276,4 @@
   });
 </script>
 </body>
-
 </html>
