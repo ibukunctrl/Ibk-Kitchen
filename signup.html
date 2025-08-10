@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login| Ibukun Kitchen</title>
+    <link rel="icon" href="images/Untitled design.png" type="image/png" />
+    <link rel="stylesheet" href="style3.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+    window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    preloader.style.opacity = "0";
+    preloader.style.visibility = "hidden";
+    preloader.style.transition = "all 0.5s ease-out";
+    setTimeout(() => preloader.remove(), 1000);
+  });
+  </script>
+</head>
+<body>
+    
+    <!-- LOADING -->
+ <div id="preloader">
+  <i class="fas fa-hamburger food-icon"></i>
+</div>
+
+<!-- LOADING ENDS -->
+       
+        <li  style="list-style-type: none;">
+        <a  href="index.html" style="color: #fff; margin-right: 20px;"><i class="fa-solid fa-house"></i></a>
+        </li>
+    
+    <div class="glass-container">
+        <h2>Sign Up</h2>
+        <form>
+            <div class="form-row">
+                 <div class="input-group">
+                <input type="text" required>
+                <label>Enter your first/last Name</label>
+            </div>
+            </div>
+
+            <div class="form-row">
+            <div class="input-group">
+                <input type="email" required>
+                <label>Enter your Email</label>
+            </div>
+            <div class="input-group">
+                <input type="text" required>
+                <label>Username</label>
+            </div>
+            </div>
+            <div class="form-row">
+            <div class="input-group">
+                <input type="password" required>
+                <label>Password</label>
+            </div>
+            <div class="input-group">
+                <input type="password" required>
+                <label>Confirm Password</label>
+            </div>
+            </div>
+    
+            <div>
+                <label>
+                    <input type="checkbox">Remember Me</label>
+            </div>
+            <a href="login.html">
+            <button type="submit" class="login-btn"><a style="text-decoration: none; color: #fff;" href="login.html">Create Account</a></button>
+            </a>
+            <div class="register-link">
+                <p>Return to <a href="login.html">Sign In</a></p>
+            </div>
+        </form>
+    </div>
+    <script>
+  window.addEventListener("load", function () {
+    // Force at least 2 seconds delay even if page loads fast
+    setTimeout(() => {
+      const preloader = document.getElementById("preloader");
+      const mainContent = document.getElementById("main-content");
+
+      preloader.style.opacity = "0";
+      preloader.style.visibility = "hidden";
+      preloader.style.transition = "all 0.5s ease-out";
+
+      // After fade-out, show main content
+      setTimeout(() => {
+        preloader.remove();
+        mainContent.style.display = "block";
+      }, 500); // fade out duration
+    }, 10000); // ⬅️ minimum time you want to keep the loader visible
+  });
+</script>
+</body>
+</html>
