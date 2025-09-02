@@ -23,8 +23,17 @@
     transform: translateY(0);
   }
 }
+@media (min-width: 768px) {
+    .form-row .custom-btn .custom-btn1 .custom-btn2 {
+        flex: 1 1 calc(50% - 20px); /* two per row */
+    }
+}
 
-
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* space between inputs */
+}
 /* LOADING STYLE */
 #preloader {
   position: fixed;
@@ -56,7 +65,7 @@
 
 
 #twi{
-    margin-right: 20px;
+
 }
 .nav{
     color: rgb(182, 105, 5);
@@ -111,7 +120,8 @@ width: 100%;
   padding-right: 5px;
 }
 #carouselExampleAutoplaying{
-  margin-top: 120px;
+    margin-top: 50px;
+    z-index: 1;
 }
 .nav-item{
   margin-right: -20px;
@@ -359,6 +369,23 @@ letter-spacing: 4px;
 }
 /* search end */
 
+.carousel-container {
+    position: relative;
+}
+
+.carousel-caption-custom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+    color: #fff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    max-width: 800px;
+    text-align: center;
+    z-index: 10; /* ensure it's above carousel */
+}
 
 /* menu */
 .menubody{
@@ -368,7 +395,6 @@ letter-spacing: 4px;
   background-repeat: no-repeat;
   background-position: center;
   padding: 40px;
-  height: 1000px;
 }
 .menutext{
   font-size: 40px;
@@ -586,6 +612,48 @@ nav a {
   font-size: 1rem;
 }
 
+/* welcome */
+.header{
+    margin-top: 110px;
+    margin-bottom: -100px;
+    padding-bottom: -100px;
+    position: relative;
+    z-index: 2;
+}
+.welcome-text {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white; /* simple text color */
+    text-align: center;
+    margin-top: 50px;
+    animation: fadeOut 2s ease-out forwards; /* fade and stay hidden */
+    animation-delay: 2s; /* wait 2s before fading out */
+}
+
+/* Fade out keyframe */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px); /* optional slide up while fading */
+    }
+}
+
+
+/* Small upward fade animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* welcome end */
 .checkout-btn:hover {
   background: #e55428;
 }

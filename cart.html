@@ -24,6 +24,108 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+<style>
+/* Payment Option Cards */
+.payment-option {
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.payment-option.selected {
+    border-color: brown;
+    background: #fff0f2;
+    transform: scale(1.05);
+}
+
+.payment-option i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: brown;
+}
+
+/* Payment forms */
+.payment-form {
+    display: none;
+    margin-top: 20px;
+}
+
+.payment-form.active {
+    display: block;
+}
+
+/* Custom button */
+.btn-custom {
+    background: brown;
+    color: #fff;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 50px;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.btn-custom:hover {
+    background: rgb(146, 76, 76);
+    color: #fff;
+}
+
+/* Order Summary */
+.order-summary {
+    background: #fff0f2;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.order-summary h5 {
+    font-weight: bold;
+    color: brown;
+}
+
+/* Modal Header */
+.modal-header {
+    border-bottom: none;
+}
+
+/* Steps */
+.checkout-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.checkout-steps div {
+    text-align: center;
+    flex: 1;
+    position: relative;
+    font-size: 14px;
+}
+
+.checkout-steps div:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #ddd;
+    top: 10px;
+    left: 50%;
+    transform: translateX(50%);
+    z-index: -1;
+}
+
+.checkout-steps div.active p {
+    font-weight: bold;
+    color: brown;
+}
+
+.checkout-steps div.active::after {
+    background: brown;
+}
+</style>
 </head>
 <body>
   <!-- LOADING -->
@@ -35,14 +137,14 @@
 <div class="fixed-top">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html" id="img" style="margin-right: -30px; margin-left: -20px;"><img src="images/ibukun kitchekn.png" alt=""></a>
+                <a class="navbar-brand" href="home.php" id="img" style="margin-right: -30px; margin-left: -20px;"><img src="images/ibukun kitchekn.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link active" id="navclr" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link active" id="navclr" aria-current="page" href="home.php">Home</a>
                     </li>
                    
                     <li class="nav-item">
@@ -71,9 +173,10 @@
                     <a class="nav-link" href="#"><i class="fa-brands fa-twitter"></i></a>
                     </li>
                     <li class="nav-item" id="twi">
-                    <a class="nav-link" href="login.html"><i class="fa-solid fa-user"></i></a>
+                    <a class="nav-link" href="logout.php"><i class="fa-solid fa-right-from-bracket"></i></a>
                     </li>
-                    </li>
+                    <a href="cart.html" style="text-decoration= none;">
+                      <li>
                         <button class="custom-btn">
                         <i class="fas fa-utensils"></i>
                         <div class="btn-text">
@@ -82,12 +185,15 @@
                         </div>
                         </button>
                     </li>
+                    </a>
                 </ul>
                 </div>
             </div>
         </nav>
     </div>
 
+
+    
   <main class="cart-container" style="margin-top: 130px;">
     <h2>Your Cart</h2>
     <div class="cart-content">
@@ -125,27 +231,104 @@
         <p>Tax: <span>#150.00</span></p>
         <p><strong>Total: <span>#6,150.00</span></strong></p>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background: brown; padding: 15px 20px;">
-        Proceed to Checkout
-        </button>
+        <button class="btn btn-primary btn-lg mt-3" data-bs-toggle="modal" data-bs-target="#checkoutModal" style="background: brown; padding: 15px 20px;">
+        Pay Now
+    </button>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Proceed to Payment?</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    
+<!-- Modal -->
+<div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="checkoutModalLabel">Checkout Payment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <!-- Steps -->
+        <div class="checkout-steps mb-3">
+            <div class="active"><p>1. Review Order</p></div>
+            <div><p>2. Payment</p></div>
+            <div><p>3. Confirmation</p></div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="order-summary">
+            <h5>Order Summary</h5>
+            <ul class="list-unstyled mt-3">
+                <li class="d-flex justify-content-between">Jollof Rice & Chicken <span>₦5,000</span></li>
+                <li class="d-flex justify-content-between">Palm Wine <span>₦1,500</span></li>
+                <li class="d-flex justify-content-between"><strong>Total:</strong> <strong>₦6,500</strong></li>
+            </ul>
+        </div>
+
+        <!-- Payment Method Selection -->
+        <h5 class="mt-4">Choose Payment Method</h5>
+        <div class="row g-3 mt-2">
+            <div class="col-md-4">
+                <div class="payment-option" data-method="card">
+                    <i class="fas fa-credit-card"></i>
+                    <p>Credit / Debit Card</p>
+                </div>
             </div>
-            <div class="modal-body">
-                Make sure your delivery address and payment method are correct. <br>
-                Click "Continue" to proceed with payment.
+            <div class="col-md-4">
+                <div class="payment-option" data-method="transfer">
+                    <i class="fas fa-university"></i>
+                    <p>Bank Transfer</p>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary"><a href="checkout.html" style="text-decoration: none; color: white;">Checkout</a></button>
+            <div class="col-md-4">
+                <div class="payment-option" data-method="wallet">
+                    <i class="fas fa-wallet"></i>
+                    <p>Wallet / USSD</p>
+                </div>
             </div>
+        </div>
+
+        <!-- Payment Forms -->
+        <div class="payment-form" id="card">
+            <h6>Card Details</h6>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Card Holder Name">
             </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Card Number">
+            </div>
+            <div class="row g-3">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="MM/YY">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="CVV">
+                </div>
+            </div>
+            <a href="checkout.html"><button class="btn btn-custom mt-3">Pay ₦6,500</button></a>
+            
+        </div>
+
+        <div class="payment-form" id="transfer">
+            <h6>Bank Transfer</h6>
+            <p>Use the following details to make a transfer:</p>
+            <ul>
+                <li>Account Name: Ibukun Kitchen</li>
+                <li>Account Number: 0123456789</li>
+                <li>Bank: GTBank</li>
+            </ul>
+            <p>After transfer, click below:</p>
+            <a href="checkout.html"><button class="btn btn-custom mt-2">Confirm Payment</button></a>
+            
+        </div>
+
+        <div class="payment-form" id="wallet">
+            <h6>Wallet / USSD</h6>
+            <p>Enter your wallet or USSD code:</p>
+            <input type="text" class="form-control mb-3" placeholder="Enter USSD code or wallet number">
+            <a href="checkout.html"><button class="btn btn-custom mt-2">Pay Now</button></a>
+        </div>
+
+      </div>
+        
         </div>
         </div>
       </div>
@@ -165,6 +348,25 @@
       setTimeout(() => preloader.remove(), 500);
     }, 100000); // 3 seconds delay just for testing
   });
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const options = document.querySelectorAll('.payment-option');
+const forms = document.querySelectorAll('.payment-form');
+
+options.forEach(opt => {
+    opt.addEventListener('click', () => {
+        options.forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+
+        const method = opt.dataset.method;
+        forms.forEach(f => f.classList.remove('active'));
+        document.getElementById(method).classList.add('active');
+    });
+});
 </script>
 </body>
 </html>
+
+

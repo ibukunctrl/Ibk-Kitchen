@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacts-Ibukun Kitchen</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+    .contactimg {
+    position: relative;
+    text-align: center;
+}
+
+.contactimg img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.contact-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6); /* dark transparent background for readability */
+    color: #fff;
+    padding: 30px;
+    max-width: 800px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+}
+</style>
     <!-- js styLING -->
      <script>
     window.addEventListener("load", function () {
@@ -33,14 +58,14 @@
     <div class="fixed-top">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html" id="img" style="margin-right: -30px; margin-left: -20px;"><img src="images/ibukun kitchekn.png" alt=""></a>
+                <a class="navbar-brand" href="home.php" id="img" style="margin-right: -30px; margin-left: -20px;"><img src="images/ibukun kitchekn.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link active" id="navclr" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link active" id="navclr" aria-current="page" href="home.php">Home</a>
                     </li>
                    
                     <li class="nav-item">
@@ -69,9 +94,10 @@
                     <a class="nav-link" href="#"><i class="fa-brands fa-twitter"></i></a>
                     </li>
                     <li class="nav-item" id="twi">
-                    <a class="nav-link" href="login.html"><i class="fa-solid fa-user"></i></a>
+                    <a class="nav-link" href="logout.php"><i class="fa-solid fa-right-from-bracket"></i></a>
                     </li>
-                    </li>
+                    <a href="cart.html" style="text-decoration= none;">
+                    <li>
                         <button class="custom-btn">
                         <i class="fas fa-utensils"></i>
                         <div class="btn-text">
@@ -80,14 +106,23 @@
                         </div>
                         </button>
                     </li>
+                    </a>
                 </ul>
                 </div>
             </div>
         </nav>
     </div>
-    <div class="contactimg">
-        <img src="images/COVER PHTO - Copy.jpg" alt="">
+   <div class="contactimg">
+    <img src="images/COVER PHTO - Copy.jpg" alt="">
+    <div class="contact-overlay">
+        <h2>Contact Us</h2>
+        <p>
+            Welcome to Ibukun Kitchen! We love to hear from our customers. Whether you have questions about our menu, want to give feedback, or need assistance with your order, this page is the best way to reach us. 
+            Fill out the form below, and our team will get back to you as soon as possible.
+        </p>
     </div>
+</div>
+
     <!-- conacts fills -->
         <div class="container text-center" id="contacts">
     <div class="row align-items-start">
@@ -129,7 +164,6 @@
             <p class="card-text"><a href="map2.html">Command Rd, Lagos Nigeria</a>
             <h5 class="card-title">SOCIAL MEDIA</h5>
             <p class="card-text"><a href="#"><i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-square-instagram"></i>ibukun_kitchen</a></p>
-            <a href="menu.html" class="btn btn-primary">Order Now</a>
         </div>
         <div class="card-footer text-body-secondary">
             2025 copyright © Ibukun Kitchen. All rights reserved 

@@ -1,46 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- js styLING -->
-     <script>
-    window.addEventListener("load", function () {
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- js styling -->
+<script>
+window.addEventListener("load", function () {
     const preloader = document.getElementById("preloader");
     preloader.style.opacity = "0";
     preloader.style.visibility = "hidden";
     preloader.style.transition = "all 0.5s ease-out";
     setTimeout(() => preloader.remove(), 500);
-  });
-</script>
+});
 
-     <!-- js styling end -->
-    <link rel="icon" href="images/Untitled design.png" type="image/png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>Menu-Ibukun Kitchen</title>
+// Food category filter
+function showCategory(category) {
+    const allItems = document.querySelectorAll('.food-item');
+    allItems.forEach(item => {
+        if(item.dataset.category === category || category === 'all') {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+</script>
+<link rel="icon" href="images/Untitled design.png" type="image/png" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<title>Menu-Ibukun Kitchen</title>
+<style>
+/* Food cards smaller and responsive */
+<style>
+/* Food cards smaller and responsive with reduced height */
+.food-item {
+    width: 25% !important; 
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+.food-item:hover {
+    transform: scale(1.05);
+}
+.food-item .card-img-top {
+    height: 120px; /* reduced height */
+    object-fit: cover;
+}
+.food-item .card-body {
+    padding: 5px 10px; /* reduced padding */
+}
+.food-item .card-text {
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .food-item { width: 20% !important; }
+}
+@media (max-width: 992px) {
+    .food-item { width: 25% !important; }
+}
+@media (max-width: 768px) {
+    .food-item { width: 45% !important; }
+}
+@media (max-width: 576px) {
+    .food-item { width: 90% !important; }
+}
+
+/* Food category buttons styling */
+.category-btn {
+    border-radius: 25px;
+    padding: 8px 20px;
+    font-weight: bold;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    transition: 0.3s;
+}
+.category-btn:hover {
+    background: #ff8787;
+    color: white;
+}
+
+/* Footer styling */
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+.footer a {
+    color: #ff6b6b;
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+.footer .social-icons i {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #ff6b6b;
+    transition: 0.3s;
+}
+.footer .social-icons i:hover {
+    color: #fff;
+}
+</style>
+
+</style>
 </head>
 <body>
-    <!-- LOADING -->
- <div id="preloader">
-  <i class="fas fa-hamburger food-icon"></i>
+<!-- LOADING -->
+<div id="preloader">
+    <i class="fas fa-hamburger food-icon"></i>
 </div>
 
-<!-- LOADING ENDS -->
-    <div class="fixed-top">
+<!-- NAVBAR -->
+<div class="fixed-top">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html" id="img" style="margin-right: -30px; margin-left: -20px;"><img src="images/ibukun kitchekn.png" alt=""></a>
+                <a class="navbar-brand" href="home.php" id="img" style="margin-right: -30px; margin-left: -20px;"><img src="images/ibukun kitchekn.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link active" id="navclr" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link active" id="navclr" aria-current="page" href="home.php">Home</a>
                     </li>
                    
                     <li class="nav-item">
@@ -69,10 +157,10 @@
                     <a class="nav-link" href="#"><i class="fa-brands fa-twitter"></i></a>
                     </li>
                     <li class="nav-item" id="twi">
-                    <a class="nav-link" href="login.html"><i class="fa-solid fa-user"></i></a>
+                    <a class="nav-link" href="logout.php"><i class="fa-solid fa-right-from-bracket"></i></a>
                     </li>
-                    </li>
-                    <li>
+                    <a href="cart.html" style="text-decoration= none;">
+                      <li>
                         <button class="custom-btn">
                         <i class="fas fa-utensils"></i>
                         <div class="btn-text">
@@ -81,107 +169,140 @@
                         </div>
                         </button>
                     </li>
+                    </a>
                 </ul>
                 </div>
             </div>
         </nav>
     </div>
-    <div class="menubody">
-        <p class="menutext"><b>Browse Our various delicacies</b></p>
-        <!-- food menu carousel -->
-            <div class="carousel-item active" id="caorusel1">
-                <div class="d-flex justify-content-center gap-3">
-                    <div class="card" style="width: 20%;">
-                    <img src="images/jollof rice.jpg" class="card-img-top" alt="...">
-                        <div class="card-body"><p class="card-text">Jollof Rice and Chicken</p></div>
-                        <div class="card-body"><p class="card-text"><b>₦5,000</b></p></div>
-                        <div class="card-body"><p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></div>
-                     </div>
-                            <div class="card" style="width: 20%;">
-                                <img src="images/ofada.jpg" class="card-img-top" alt="...">
-                                <div class="card-body"><p class="card-text">Ofada Rice</p></div>
-                                <div class="card-body"><p class="card-text"><b>₦3,500</b></p></div>
-                                <div class="card-body"><p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></div>
-                            </div>
-                            <div class="card" style="width: 20%;">
-                                <img src="images/pizza1.jpg" class="card-img-top" alt="...">
-                                <div class="card-body"><p class="card-text">Pizza</p></div>
-                                <div class="card-body"><p class="card-text"><b>₦2,500</b></p></div>
-                                <div class="card-body"><p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></div>
-                            </div>
-                            <div class="card" style="width: 20%;">
-                                <img src="images/pizza1.jpg" class="card-img-top" alt="...">
-                                <div class="card-body"><p class="card-text">Pizza</p></div>
-                                <div class="card-body"><p class="card-text"><b>₦2,500</b></p></div>
-                                <div class="card-body"><p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></div>
-                            </div>
-                </div>
-            </div><br>
-            <div class="carousel-item active" id="menuitems">
-                <div class="d-flex justify-content-center gap-3">
-                    <div class="card" style="width: 20%;">
-                    <img src="images/yam and egg sauce.jpg" class="card-img-top" alt="...">
-                        <div class="card-body"><p class="card-text">Yam and Egg Sauce</p></div>
-                        <div class="card-body"><p class="card-text"><b>₦4,000</b></p></div>
-                        <div class="card-body"><p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></div>
-                     </div>
-                            <div class="card" style="width: 20%;">
-                                <img src="images/sharwarma.jpg" class="card-img-top" alt="...">
-                                <div class="card-body"><p class="card-text">Shrwarma</p></div>
-                                <div class="card-body"><p class="card-text"><b>₦2,500</b></p></div>
-                                <div class="card-body"><p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></div>
-                            </div>
-                            <div class="card" style="width: 20%;">
-                                <img src="images/drinks.jpg" class="card-img-top" alt="...">
-                                <div class="card-body"><p class="card-text">Soft-Drinks</p></div>
-                                <div class="card-body"><p class="card-text"><b>₦500</b></p></div>
-                                <div class="card-body"><p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></div>
-                            </div>
-                            <div class="card" style="width: 20%;">
-                                <img src="images/a-flying-burger-with-all-the-layers-ai-generative-free-photo.jpg" class="card-img-top" alt="...">
-                                <div class="card-body"><p class="card-text">Burger</p></div>
-                                <div class="card-body"><p class="card-text"><b>₦5,000</b></p></div>
-                                <div class="card-body"><p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></div>
-                            </div>
-                </div> 
-                <div>
-                <button class="order-btn1"><a href="cart.html" style="text-decoration: none; color: #740b19;">Go to Cart</a></button>
-            </div>
-            </div>
-           
-        
-         <!-- end of food menu -->
+
+
+<!-- Menu Body -->
+<div class="menubody" style="margin-top:100px;">
+<p class="menutext"><b>Browse Our Various Delicacies</b></p>
+
+<!-- Food Categories -->
+<div class="d-flex justify-content-center gap-3 mb-4 flex-wrap">
+<button class="category-btn" onclick="showCategory('all')">All</button>
+<button class="category-btn" onclick="showCategory('rice')">Rice</button>
+<button class="category-btn" onclick="showCategory('fastfood')">Soups</button>
+<button class="category-btn" onclick="showCategory('drinks')">Drinks</button>
+<button class="category-btn" onclick="showCategory('others')">Others</button>
+</div>
+
+<!-- Food Items -->
+<div class="d-flex flex-wrap justify-content-center gap-3">
+<!-- Rice -->
+<div class="card food-item" data-category="rice">
+<img src="images/jollof rice.jpg" class="card-img-top" alt="Jollof Rice">
+<div class="card-body"><p class="card-text">Jollof Rice and Chicken</p></div>
+<div class="card-body"><p class="card-text"><b>₦5,000</b></p></div>
+<div class="card-body"><button class="btn btn-success">Add to Cart</button></div>
+</div>
+<div class="card food-item" data-category="rice">
+<img src="images/Native-rice-1.jpg" class="card-img-top" alt="Jollof Rice">
+<div class="card-body"><p class="card-text">Native Rice</p></div>
+<div class="card-body"><p class="card-text"><b>₦3,000</b></p></div>
+<div class="card-body"><button class="btn btn-success">Add to Cart</button></div>
+</div>
+<div class="card food-item" data-category="rice">
+<img src="images/chicken.jpeg" class="card-img-top" alt="Jollof Rice">
+<div class="card-body"><p class="card-text">Chicken Fried Rice</p></div>
+<div class="card-body"><p class="card-text"><b>₦3,000</b></p></div>
+<div class="card-body"><button class="btn btn-success">Add to Cart</button></div>
+</div>
+<div class="card food-item" data-category="rice">
+<img src="images/ofada.jpg" class="card-img-top" alt="Ofada Rice">
+<div class="card-body"><p class="card-text">Ofada Rice</p></div>
+<div class="card-body"><p class="card-text"><b>₦3,500</b></p></div>
+<div class="card-body"><button class="btn btn-success">Add to Cart</button></div>
+</div>
+
+<!-- Soup -->
+<div class="card food-item" data-category="fastfood">
+<img src="images/Eba.jpeg" class="card-img-top" alt="Eba with Okra Soup">
+<div class="card-body"><p class="card-text">Eba with Okra Soup</p></div>
+<div class="card-body"><p class="card-text"><b>₦500</b></p></div>
+<div class="card-body"><button class="btn btn-success">Add to Cart</button></div>
+</div>
+
+<div class="card food-item" data-category="fastfood">
+<img src="images/afang-soup.jpg" class="card-img-top" alt="Afang Soup">
+<div class="card-body"><p class="card-text">Afang Soup</p></div>
+<div class="card-body"><p class="card-text"><b>₦2,500</b></p></div>
+<div class="card-body"><button class="btn btn-success">Add to Cart</button></div>
+</div>
+<div class="card food-item" data-category="fastfood">
+<img src="images/edikaikong.jpg" class="card-img-top" alt="Afang Soup">
+<div class="card-body"><p class="card-text">Edikaikong Soup</p></div>
+<div class="card-body"><p class="card-text"><b>₦2,500</b></p></div>
+<div class="card-body"><button class="btn btn-success">Add to Cart</button></div>
+</div>
+<div class="card food-item" data-category="fastfood">
+<img src="images/efo.jpeg" class="card-img-top" alt="Afang Soup">
+<div class="card-body"><p class="card-text">Efo Riro</p></div>
+<div class="card-body"><p class="card-text"><b>₦1,500</b></p></div>
+<div class="card-body"><button class="btn btn-success">Add to Cart</button></div>
+</div>
+
+<!-- Drinks -->
+<div class="card food-item" data-category="drinks">
+<img src="images/download.jpg" class="card-img-top" alt="Soft Drinks">
+<div class="card-body"><p class="card-text">Zobo</p></div>
+<div class="card-body"><p class="card-text"><b>₦500</b></p></div>
+<div class="card-body"><button class="btn btn-success">Add to Cart</button></div>
+</div>
+<div class="card food-item" data-category="drinks">
+<img src="images/Nigerian-drinks.webp" class="card-img-top" alt="Soft Drinks">
+<div class="card-body"><p class="card-text">Zobo</p></div>
+<div class="card-body"><p class="card-text"><b>₦500</b></p></div>
+<div class="card-body"><button class="btn btn-success">Add to Cart</button></div>
+</div>
+<div class="card food-item" data-category="drinks">
+<img src="images/images.jpg" class="card-img-top" alt="Soft Drinks">
+<div class="card-body"><p class="card-text">Tiger-Nut Drink</p></div>
+<div class="card-body"><p class="card-text"><b>₦500</b></p></div>
+<div class="card-body"><button class="btn btn-success">Add to Cart</button></div>
+</div>
+
+<!-- Others -->
+<div class="card food-item" data-category="others">
+<img src="images/yam and egg sauce.jpg" class="card-img-top" alt="Yam and Egg Sauce">
+<div class="card-body"><p class="card-text">Yam and Egg Sauce</p></div>
+<div class="card-body"><p class="card-text"><b>₦4,000</b></p></div>
+<div class="card-body"><button class="btn btn-success">Add to Cart</button></div>
+</div>
+<div class="card food-item" data-category="others">
+<img src="images/plantain.jpeg" class="card-img-top" alt="Yam and Egg Sauce">
+<div class="card-body"><p class="card-text">Plantinova</p></div>
+<div class="card-body"><p class="card-text"><b>₦2,000</b></p></div>
+<div class="card-body"><button class="btn btn-success">Add to Cart</button></div>
+</div>
+<div class="card food-item" data-category="others">
+<img src="images/sharwarma.jpg" class="card-img-top" alt="Yam and Egg Sauce">
+<div class="card-body"><p class="card-text">Sharwarma</p></div>
+<div class="card-body"><p class="card-text"><b>₦2,000</b></p></div>
+<div class="card-body"><button class="btn btn-success">Add to Cart</button></div>
+</div>
+</div>
+
+
+<div class="text-center mt-4">
+<button class="order-btn1"><a href="cart.html" style="text-decoration: none; color: #740b19;">Go to Cart</a></button>
+</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <img src="images/ibukun kitchekn.png" alt="Ibukun Kitchen" style="width:120px; margin-bottom:15px;">
+    <div class="social-icons mb-3">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
     </div>
-     <!-- end body -->
-            <div class="card text-center">
-        <div class="card-header" id="footer">
-            <img src="images/ibukun kitchekn.png" alt="">
-        </div>
-        <div class="card-body" id="footerbody">
-            <h5 class="card-title">HEAD OFFICE</h5>
-            <p class="card-text"><a href="map.html">Ipaja Road, Lagos Nigeria</a>
-            <h5 class="card-title">BRANCH</h5>
-            <p class="card-text"><a href="map2.html">Command Rd, Lagos Nigeria</a>
-            <h5 class="card-title">SOCIAL MEDIA</h5>
-            <p class="card-text"><a href="#"><i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-square-instagram"></i>ibukun_kitchen</a></p>
-            <a href="menu.html" class="btn btn-primary">Order Now</a>
-        </div>
-        <div class="card-footer text-body-secondary">
-            2025 copyright © Ibukun Kitchen. All rights reserved 
- 
-        </div>
-        </div>
-        <!-- end of end body -->
-    <script>
-    window.addEventListener("load", function () {
-    setTimeout(() => {
-      const preloader = document.getElementById("preloader");
-      preloader.style.opacity = "0";
-      preloader.style.visibility = "hidden";
-      preloader.style.transition = "all 3.5s ease-out";
-      setTimeout(() => preloader.remove(), 500);
-    }, 100000); // 3 seconds delay just for testing
-  });
-</script>
+    <p><strong>Head Office:</strong> <a href="map.html">Ipaja Road, Lagos Nigeria</a></p>
+    <p><strong>Branch:</strong> <a href="map2.html">Command Rd, Lagos Nigeria</a></p>
+    <p>2025 © Ibukun Kitchen. All rights reserved.</p>
+</div>
 </body>
 </html>
