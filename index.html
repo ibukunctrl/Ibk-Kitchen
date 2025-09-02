@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +44,6 @@ function searchFood() {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
 </head>
 <body>
-
 <!-- LOADING -->
  <div id="preloader">
   <i class="fas fa-hamburger food-icon"></i>
@@ -52,76 +52,74 @@ function searchFood() {
 <!-- LOADING ENDS -->
 
     <div class="fixed-top">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.html" id="img" style="margin-right: -30px; margin-left: -20px;"><img src="images/ibukun kitchekn.png" alt=""></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html" id="img" style="margin-right: -30px; margin-left: -20px;"><img src="images/ibukun kitchekn.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
                 <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                    <a class="nav-link active" id="nav-home"  aria-current="page" href="#">Home</a>
-                    </li>
-                   
-                    <li class="nav-item">
-                    <a class="nav-link" id="navclr"href="menu.html">Menu</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" id="navclr"href="cart.html">Cart</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" id="navclr" href="contact.html">Contacts</a>
-                    </li>
-                     <!-- about us dropdown -->
-      <div class="search-container" style="margin-left: 30px; margin-bottom: 20px;">
-    <input type="text"  id="foodSearch" placeholder="Search for food...">
-    <button  onclick="searchFood()">Search</button>
-  </div>
-  <script src="script.js"></script>
-                     <!-- about us end -->
-                    
-                    <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-brands fa-facebook"></i></a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-brands fa-instagram"></i></a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-brands fa-twitter"></i></a>
-                    </li>
-                    <li class="nav-item" id="twi">
-                    <a class="nav-link" href="login.html"><i class="fa-solid fa-user"></i></a>
-                    </li>
-                    </li>
-                    <li>
-                        <button class="custom-btn">
-                        <i class="fas fa-utensils"></i>
-                        <div class="btn-text">
-                            <span class="line-one">ORDER NOW</span>
-                            <span class="line-two">FAST & FRESH</span>
-                        </div>
-                        </button>
-                    </li>
-                </ul>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <a class="nav-link active" id="nav-home"  aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" id="navclr" href="menu.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" id="navclr" href="cart.html">Cart</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" id="navclr" href="contact.html">Contacts</a>
+                </li>
+                <div class="search-container" style="margin-left: 30px; margin-bottom: 20px;">
+                    <input type="text"  id="foodSearch" placeholder="Search for food...">
+                    <button  onclick="searchFood()">Search</button>
                 </div>
+                <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa-brands fa-facebook"></i></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa-brands fa-twitter"></i></a>
+                </li>
+                <li class="nav-item" id="twi">
+                <a class="nav-link" href="logout.php"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </li>
+                <a href="cart.html" style="text-decoration= none;">
+                  <li>
+                    <button class="custom-btn">
+                    <i class="fas fa-utensils"></i>
+                    <div class="btn-text">
+                        <span class="line-one">ORDER NOW</span>
+                        <span class="line-two">FAST & FRESH</span>
+                    </div>
+                    </button>
+                </li>
+                </a>
+            </ul>
             </div>
-        </nav>
-    </div>
-    <!-- carousel -->
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        </div>
+    </nav>
+</div>
+
+<!-- Welcome / About Section -->
+<div class="carousel-container">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active" sty>
-            <img src="images/BURGER.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-item active">
+                <img src="images/2.png" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-            <img src="images/BURGER (2).jpg" class="d-block w-100" alt="...">
+                <img src="images/3.png" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-            <img src="images/BURGER (3).jpg" class="d-block w-100" alt="...">
+                <img src="images/BURGER (3).jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-            <img src="images/BURGER (1).jpg" class="d-block w-100" alt="...">
+                <img src="images/4.png" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -132,26 +130,42 @@ function searchFood() {
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-        </div>
-     <!-- end of carousel -->
+    </div>
+
+    <!-- Overlay text -->
+    <div class="carousel-caption-custom">
+    <h2 class="">Welcome, <?php echo htmlspecialchars($username); ?>! 👋</h2>
+    <p>
+        At <strong>Ibukun Kitchen</strong>, Taste the Difference!
+Enjoy delicious meals onsite or from the comfort of your home.
+We offer fast, reliable online delivery and a welcoming dine-in experience.
+From [your cuisine types] to tasty treats, every dish is freshly prepared.
+Perfect for meals alone, with friends, or family gatherings.
+Good food, made easy, anytime you want it.
+    </p>
+</div>
+    </div>
+</div>
+
         <div class="image-container">
             <button class="order-btn">Order Now</button>
             <img src="images/COVER PHTO.jpg" alt="Delicious Meal" />
             </div>
     <!-- contact boxes -->
+     <div class="form-row">
      <div class="container text-center">
-  <div class="row align-items-start">
-    <div class="col" id="btnright">
+      <div class="row align-items-start">
+      <div class="col" id="btnright">
       <a href="https://wa.me/2347068668907" target="_blank" class="custom-btn1" style="text-decoration: none;">
-    <i class="fa-brands fa-whatsapp"></i>
-    <div class="btn-text">
+      <i class="fa-brands fa-whatsapp"></i>
+      <div class="btn-text">
         <span class="line-one">ORDER VIA</span>
         <span class="line-one">WHATSAPP</span>
-    </div>
-</a>
+        </div>
+        </a>
     </div>
     <div class="col">
-      <button class="custom-btn1">
+          <button class="custom-btn1"  style="margin-right: 20px;">
             <i class="fa-solid fa-phone-volume"></i>
             <div class="btn-text">
                 <span class="line-one">07068668907</span>
@@ -159,8 +173,9 @@ function searchFood() {
             </div>
         </button>
     </div>
+    </div>
     <div class="col">
-      <button class="custom-btn2">
+          <button class="custom-btn1"  style="margin-right: 20px;">
             <i class="fa-solid fa-truck-fast"></i>
             <div class="btn-text">
                 <span class="line-one">FAST</span>
@@ -195,8 +210,8 @@ function searchFood() {
           <div class="card-body"><p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></div>
         </div>
         <div class="card" style="width: 18rem;">
-          <img src="images/pizza1.jpg" class="card-img-top" alt="...">
-          <div class="card-body"><p class="card-text">Pizza</p></div>
+          <img src="images/Native-rice-1.jpg" class="card-img-top" alt="...">
+          <div class="card-body"><p class="card-text">Native Rice</p></div>
           <div class="card-body"><p class="card-text"><b>₦2,500</b></p></div>
           <div class="card-body"><p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></div>
         </div>
@@ -213,15 +228,15 @@ function searchFood() {
           <div class="card-body"><p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></div>
         </div>
         <div class="card" style="width: 18rem;">
-          <img src="images/sharwarma.jpg" class="card-img-top" alt="...">
-          <div class="card-body"><p class="card-text">Sharwarma</p></div>
+          <img src="images/efo.jpeg" class="card-img-top" alt="...">
+          <div class="card-body"><p class="card-text">Efo</p></div>
           <div class="card-body"><p class="card-text"><b>₦2,000</b></p></div>
           <div class="card-body"><p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></div>
         </div>
         <div class="card" style="width: 18rem;">
-          <img src="images/drinks.jpg" class="card-img-top" alt="...">
-          <div class="card-body"><p class="card-text">Drinks</p></div>
-          <div class="card-body"><p class="card-text"><b>₦500</b></p></div>
+          <img src="images/Efo-elegusi-cooking-15.jpg" class="card-img-top" alt="...">
+          <div class="card-body"><p class="card-text">Efo Elegusi</p></div>
+          <div class="card-body"><p class="card-text"><b>₦2,000</b></p></div>
           <div class="card-body"><p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></div>
         </div>
       </div>
@@ -251,7 +266,6 @@ function searchFood() {
             <p class="card-text"><a href="map2.html">Command Rd, Lagos Nigeria</a>
             <h5 class="card-title" id="footertext">SOCIAL MEDIA</h5>
             <p class="card-text"><a href="#"><i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-square-instagram"></i>ibukun_kitchen</a></p>
-            <a href="menu.html" class="btn btn-primary" id="footertext">Order Now</a>
         </div>
         <div class="card-footer text-body-secondary">
             2025 copyright © Ibukun Kitchen. All rights reserved 
@@ -278,5 +292,7 @@ function searchFood() {
     }, 10000); // ⬅️ minimum time you want to keep the loader visible
   });
 </script>
+    <!-- <p><a href="logout.php?user_id=<?php echo $user_id; ?>">Logout</a></p> -->
+
 </body>
 </html>
